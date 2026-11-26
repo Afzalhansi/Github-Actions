@@ -43,7 +43,7 @@ jobs:
 
       - name: Docker Build and Push (${{ matrix.platform }} - ${{ matrix.tag }})
         run: |
-          docker buildx build \
+          docker build build \
             --platform ${{ matrix.platform }} \
             --tag $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:${{ matrix.tag }}-${{ matrix.platform == 'linux/amd64' && 'amd64' || 'arm64' }} \
             --push .
