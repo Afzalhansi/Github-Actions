@@ -1,30 +1,25 @@
-name: Exploring workflow filters and activites
+name: Exploring workflow filters and activities
 
-on: 
-    workflow_dispatch:
-    # schedule:
-    #   - cron: "*/59 * * * *"
-    push:
-      branches:
-        - main
-        - '!features/*'
-    #   branches-ignore:
-    #     - feature/*
-    #     - test/*
-    pull_request:
-      types:
-        - opened
-        - closed
-      paths-ignore:
-        - README.md
-      branches:
-        - main
+on:
+  workflow_dispatch:
 
-jobs: 
-    hello:
-        runs-on: ubuntu-latest
-        steps:
-            - run: echo this workflow/job/step is executed type - ${{github.event_name}}
+  push:
+    branches-ignore:
+      - feature/*
+      - test/*
 
-            
-# new Demo changes
+  pull_request:
+    types:
+      - opened
+      - closed
+    paths-ignore:
+      - README.md
+    branches:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print event type
+        run: echo "This workflow/job/step was executed. Event type: ${{ github.event_name }}"
