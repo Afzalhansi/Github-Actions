@@ -1,5 +1,6 @@
 name: Exploring workflow filters and activites
 
+
 on: 
     workflow_dispatch:
     # schedule:
@@ -25,6 +26,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo this workflow/job/step is executed type - ${{github.event_name}}
-
-            
+       
 # new Demo changes
+
