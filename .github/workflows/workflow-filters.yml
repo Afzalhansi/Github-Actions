@@ -8,9 +8,9 @@ on:
       branches:
         - main
         - '!features/*'
-      branches-ignore:
-        - feature/*
-        - test/*
+    #   branches-ignore:
+    #     - feature/*
+    #     - test/*
     pull_request:
       types:
         - opened
